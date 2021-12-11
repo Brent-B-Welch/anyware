@@ -1,0 +1,11 @@
+swagger:
+  base-package: 'org.anyware.anyamall.warehouse.controller'
+  base-path: '/**'
+  title: 'Annotation Swagger'
+  description: 'A simple annotation swagger'
+  version: '2.0'
+  license-url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: 'Bruce'
+    url: 'https:///'
+    email: 'beiji.ma@outook.com'
