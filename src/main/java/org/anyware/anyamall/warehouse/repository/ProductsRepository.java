@@ -1,7 +1,7 @@
-package org.anyware.anyamall.anyamallwarehouse.repository;
+package org.anyware.anyamall.warehouse.repository;
 
-import org.anyware.anyamall.anyamallwarehouse.model.Product;
-import org.anyware.anyamall.anyamallwarehouse.model.Products;
+import org.anyware.anyamall.warehouse.model.Product;
+import org.anyware.anyamall.warehouse.model.Products;
 
 import java.util.List;
 

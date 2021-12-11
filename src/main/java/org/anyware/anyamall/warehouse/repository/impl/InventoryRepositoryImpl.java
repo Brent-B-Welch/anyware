@@ -1,10 +1,10 @@
-package org.anyware.anyamall.anyamallwarehouse.repository.impl;
+package org.anyware.anyamall.warehouse.repository.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.anyware.anyamall.anyamallwarehouse.model.Inventory;
-import org.anyware.anyamall.anyamallwarehouse.model.InventoryItem;
-import org.anyware.anyamall.anyamallwarehouse.repository.InventoryRepository;
+import org.anyware.anyamall.warehouse.model.Inventory;
+import org.anyware.anyamall.warehouse.model.InventoryItem;
+import org.anyware.anyamall.warehouse.repository.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

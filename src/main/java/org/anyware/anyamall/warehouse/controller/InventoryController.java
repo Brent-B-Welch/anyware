@@ -1,10 +1,12 @@
-package org.anyware.anyamall.anyamallwarehouse.controller;
+package org.anyware.anyamall.warehouse.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.anyware.anyamall.anyamallwarehouse.model.Inventory;
-import org.anyware.anyamall.anyamallwarehouse.model.InventoryItem;
-import org.anyware.anyamall.anyamallwarehouse.service.InventoryService;
-import org.anyware.anyamall.anyamallwarehouse.vo.InventoryItemRequest;
+import org.anyware.anyamall.warehouse.model.Inventory;
+import org.anyware.anyamall.warehouse.model.InventoryItem;
+import org.anyware.anyamall.warehouse.service.InventoryService;
+import org.anyware.anyamall.warehouse.vo.InventoryItemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+@Api(tags = "Inventory Management")
 @RestController
 @RequestMapping("/inventory")
 @Slf4j
@@ -20,6 +23,7 @@ public class InventoryController {
     @Autowired
     InventoryService inventoryService;
 
+    @ApiOperation("Inventory List API")
     @GetMapping("/")
     public Inventory getInventory() {
         return inventoryService.findAll();

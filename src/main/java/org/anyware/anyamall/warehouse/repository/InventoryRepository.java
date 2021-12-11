@@ -1,7 +1,8 @@
-package org.anyware.anyamall.anyamallwarehouse.repository;
+package org.anyware.anyamall.warehouse.repository;
 
-import org.anyware.anyamall.anyamallwarehouse.model.Inventory;
-import org.anyware.anyamall.anyamallwarehouse.model.InventoryItem;
+
+import org.anyware.anyamall.warehouse.model.Inventory;
+import org.anyware.anyamall.warehouse.model.InventoryItem;
 
 public interface InventoryRepository {
     Inventory getAll();

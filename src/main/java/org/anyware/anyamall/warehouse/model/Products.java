@@ -1,4 +1,4 @@
-package org.anyware.anyamall.anyamallwarehouse.model;
+package org.anyware.anyamall.warehouse.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

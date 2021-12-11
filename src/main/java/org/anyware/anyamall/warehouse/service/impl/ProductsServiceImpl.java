@@ -1,9 +1,9 @@
-package org.anyware.anyamall.anyamallwarehouse.service.impl;
+package org.anyware.anyamall.warehouse.service.impl;
 
-import org.anyware.anyamall.anyamallwarehouse.model.Product;
-import org.anyware.anyamall.anyamallwarehouse.model.Products;
-import org.anyware.anyamall.anyamallwarehouse.repository.ProductsRepository;
-import org.anyware.anyamall.anyamallwarehouse.service.ProductsService;
+import org.anyware.anyamall.warehouse.model.Product;
+import org.anyware.anyamall.warehouse.model.Products;
+import org.anyware.anyamall.warehouse.repository.ProductsRepository;
+import org.anyware.anyamall.warehouse.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,7 @@ public class ProductsServiceImpl implements ProductsService {
 
     @Override
     public Products finaALl() {
-        Products products = productsRepository.getAll();
-        return products;
+        return productsRepository.getAll();
     }
 
     @Override

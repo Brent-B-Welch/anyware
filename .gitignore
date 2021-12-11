@@ -36,3 +36,4 @@ build/
 .mvn/
 mvnw
 mvnw.cmd
+/src/main/java/org/anyware/anyamall/warehouse/config/SwaggerConfig.java

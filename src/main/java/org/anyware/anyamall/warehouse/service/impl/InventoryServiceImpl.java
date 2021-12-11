@@ -1,10 +1,9 @@
-package org.anyware.anyamall.anyamallwarehouse.service.impl;
+package org.anyware.anyamall.warehouse.service.impl;
 
-import org.anyware.anyamall.anyamallwarehouse.model.Inventory;
-import org.anyware.anyamall.anyamallwarehouse.model.InventoryItem;
-import org.anyware.anyamall.anyamallwarehouse.repository.InventoryRepository;
-import org.anyware.anyamall.anyamallwarehouse.service.InventoryService;
-import org.anyware.anyamall.anyamallwarehouse.vo.InventoryItemRequest;
+import org.anyware.anyamall.warehouse.model.Inventory;
+import org.anyware.anyamall.warehouse.model.InventoryItem;
+import org.anyware.anyamall.warehouse.repository.InventoryRepository;
+import org.anyware.anyamall.warehouse.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +14,12 @@ public class InventoryServiceImpl implements InventoryService {
 
     @Override
     public Inventory findAll() {
-        Inventory inventory = inventoryRepository.getAll();
-        return inventory;
+        return inventoryRepository.getAll();
     }
 
     @Override
     public InventoryItem findByArticleId(Long id) {
-        InventoryItem inventoryItem = inventoryRepository.getOne(id);
-        return inventoryItem;
+        return inventoryRepository.getOne(id);
     }
 
     @Override

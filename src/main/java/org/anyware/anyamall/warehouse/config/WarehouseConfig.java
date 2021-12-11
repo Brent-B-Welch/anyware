@@ -1,9 +1,9 @@
-package org.anyware.anyamall.anyamallwarehouse.config;
+package org.anyware.anyamall.warehouse.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.anyware.anyamall.anyamallwarehouse.model.Inventory;
-import org.anyware.anyamall.anyamallwarehouse.model.Products;
+import org.anyware.anyamall.warehouse.model.Inventory;
+import org.anyware.anyamall.warehouse.model.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
