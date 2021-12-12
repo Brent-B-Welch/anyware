@@ -20,7 +20,6 @@
 	</properties>
 
 
-
 	<distributionManagement>
 		<snapshotRepository>
 			<id>matrixone_snapshot</id>

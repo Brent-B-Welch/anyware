@@ -11,3 +11,15 @@ spring:
 
 server:
   port: 10010
+
+swagger:
+  base-package: 'org.corpname.anymall.ware.controller'
+  base-path: '/**'
+  title: 'Inventory Management Swagger'
+  description: 'A simple annotation swagger'
+  version: '2.0'
+  license-url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: 'Bruce'
+    url: 'https:///'
+    email: 'beiji.ma@outook.com'
