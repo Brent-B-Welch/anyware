@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/anyware_product??useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: anyware-product
+  profiles:
+    active:
+      - dev
+
+server:
+  port: 10010
+
+swagger:
+  base-package: 'org.corpname.anymall.ware.controller'
+  base-path: '/**'
+  title: 'Inventory Management Swagger'
+  description: 'A simple annotation swagger'
+  version: '2.0'
+  license-url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: 'Bruce'
+    url: 'https:///'
+    email: 'beiji.ma@outook.com'

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.corpname.anymall</groupId>
+	<artifactId>anyware</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>anyware-common</module>
+		<module>anyware-ware</module>
+		<module>anyware-product</module>
+	</modules>
+	<name>warehouse</name>
+	<description>Any Mall-Aggregation Services</description>
+    <packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+	</properties>
+
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>matrixone_snapshot</id>
+			<url>http://localhost:8081/nexus/content/repositories/matrixone_snapshot</url>
+		</snapshotRepository>
+		<repository>
+			<id>matrixone_release</id>
+			<url>http://localhost:8081/nexus/content/repositories/matrixone_release</url>
+		</repository>
+	</distributionManagement>
+
+</project>
