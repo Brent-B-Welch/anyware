@@ -1,4 +1,5 @@
--- DROP DATABASE IF EXISTS anyware_ware;
+DROP DATABASE IF EXISTS anyware_ware;
+USER anyware_ware;
 /*==============================================================*/
 /* Table: ware_sku                                              */
 /*==============================================================*/

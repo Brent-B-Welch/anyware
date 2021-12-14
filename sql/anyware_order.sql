@@ -1,4 +1,5 @@
--- DROP DATABASE IF EXISTS anyware_ware;
+--DROP DATABASE IF EXISTS anyware_product;
+USE anyware_product;
 /*==============================================================*/
 /* Table: ware_order                                              */
 /*==============================================================*/
