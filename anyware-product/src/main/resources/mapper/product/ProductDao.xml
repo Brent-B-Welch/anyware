@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.corpname.anymall.product.dao.ProductDao">
+
+    <resultMap type="org.corpname.anymall.product.entity.ProductEntity" id="wareProductMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="deleted" column="deleted"/>
+    </resultMap>
+    <insert id="saveList" useGeneratedKeys="true" parameterType="java.util.List">
+        insert into ware_product (`name`)
+        values
+        <foreach collection="entities" item="item" index="index" separator=",">
+            (
+            #{item.name}
+            )
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        name=values(name)
+    </insert>
+    <insert id="saveOrOverride" useGeneratedKeys="true" parameterType="org.corpname.anymall.product.entity.ProductEntity">
+        insert into ware_product (`name`)
+        values
+        (
+            #{name}
+        )
+        ON DUPLICATE KEY UPDATE
+        name=values(name)
+    </insert>
+
+</mapper>

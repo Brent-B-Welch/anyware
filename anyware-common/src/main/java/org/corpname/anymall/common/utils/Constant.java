@@ -1,10 +1,5 @@
 package org.corpname.anymall.common.utils;
 
-/**
- * Constant
- *
- * @author Mark sunlightcs@gmail.com
- */
 public class Constant {
 	/** Super Admin ID */
 	public static final int SUPER_ADMIN = 1;

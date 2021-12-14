@@ -3,6 +3,8 @@ package org.corpname.anymall.ware.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.corpname.anymall.common.to.ProductStockVo;
+import org.corpname.anymall.common.to.ProductWithArticlesVo;
 import org.corpname.anymall.common.utils.PageUtils;
 import org.corpname.anymall.common.utils.R;
 import org.corpname.anymall.ware.vo.Inventory;
@@ -40,7 +42,7 @@ public class WareSkuController {
      * @Author: Beiji Ma
      * @Date: 2021-12-12 23:59
      */
-    @RequestMapping("/list")
+    @RequestMapping("/")
     public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = wareSkuService.queryPage(params);
 
@@ -57,9 +59,16 @@ public class WareSkuController {
      */
     @GetMapping("/{id}")
     public R info(@PathVariable("id") Long id) {
-        WareSkuEntity wareSku = wareSkuService.getById(id);
+        WareSkuEntity data = wareSkuService.getById(id);
 
-        return R.ok().put("wareSku", wareSku);
+        return R.ok().put("data", data);
+    }
+
+    @PostMapping(path="/stock", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public R getProductWithStock(@RequestBody List<ProductWithArticlesVo> vos) {
+        log.info("ProductWithArticlesVo: {}", vos);
+        List<ProductStockVo> productStockVos = wareSkuService.getProductWithStock(vos);
+        return R.ok().put("data", productStockVos);
     }
 
     /**
@@ -86,7 +95,7 @@ public class WareSkuController {
      * @Author: Beiji Ma
      * @Date: 2021-12-13 8:23
      */
-    @PutMapping("/{id}")
+    @PutMapping("/")
     @ResponseBody
     public R update(@RequestBody WareSkuEntity wareSku) {
         wareSkuService.updateById(wareSku);
@@ -107,16 +116,17 @@ public class WareSkuController {
         return R.ok();
     }
 
-    @PostMapping(path = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
     /**
      * @MethodName: batchAddSku
-     * @Description: the method's description
+     * @Description: the method is used to import inventory items as a batch.
+     *                  TODO: It's preferable to move the logic into service layer in the future.
      * @Param: [file]
      * @Return: org.corpname.anymall.common.utils.R
      * @Author: Beiji Ma
      * @Date: 2021-12-13 8:22
     */
+    @PostMapping(path = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
     public R batchAddSku(@RequestParam("file") MultipartFile file) {
         if (!file.isEmpty()) {
             BufferedReader reader = null;

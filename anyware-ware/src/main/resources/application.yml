@@ -19,15 +19,15 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
-      logic-delete-value: 1
-      logic-not-delete-value: 0
+#      logic-delete-value: 1
+#      logic-not-delete-value: 0
 
 server:
   port: 10010
 
 logging:
   level:
-    org.corpname.anymall: debug
+    org.corpname.anymall.ware.dao: trace
 
 swagger:
   base-package: 'org.corpname.anymall.ware.controller'

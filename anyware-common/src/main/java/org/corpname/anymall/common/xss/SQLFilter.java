@@ -4,9 +4,9 @@ import org.apache.commons.lang.StringUtils;
 import org.corpname.anymall.common.exception.RRException;
 
 /**
- * SQL过滤
+ * SQL Filter
  *
- * @author Mark sunlightcs@gmail.com
+ * @author Beiji Ma beiji.ma@outlook.com
  */
 public class SQLFilter {
 

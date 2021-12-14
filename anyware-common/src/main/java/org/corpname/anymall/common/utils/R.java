@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
-
 package org.corpname.anymall.common.utils;
 
 import com.alibaba.fastjson.JSON;
@@ -18,7 +10,7 @@ import java.util.Map;
 /**
  * Result Data
  *
- * @Author: Beiji Ma
+ * @Author: Beiji Ma beiji.ma@outlook.com
  */
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;

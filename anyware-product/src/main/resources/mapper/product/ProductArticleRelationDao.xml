@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.corpname.anymall.product.dao.ProductArticleRelationDao">
+
+    <resultMap type="org.corpname.anymall.product.entity.ProductArticleRelationEntity" id="wareProductArticleMap">
+        <result property="id" column="id"/>
+        <result property="productId" column="product_id"/>
+        <result property="artId" column="art_id"/>
+        <result property="amountOf" column="amount_of"/>
+        <result property="deleted" column="deleted"/>
+    </resultMap>
+    <insert id="saveOrUpdateList" useGeneratedKeys="true" parameterType="java.util.List">
+        insert into ware_product_article_relation(`product_id`,`art_id`,`amount_of`)
+        values
+        <foreach collection="entities" item="item" index="index" separator=",">
+            (
+            #{item.productId},
+            #{item.artId},
+            #{item.amountOf}
+            )
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        product_id=values(product_id),
+        art_id=values(art_id)
+    </insert>
+</mapper>

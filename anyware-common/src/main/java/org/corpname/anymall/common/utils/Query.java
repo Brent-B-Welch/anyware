@@ -9,11 +9,6 @@ import org.corpname.anymall.common.xss.SQLFilter;
 
 import java.util.Map;
 
-/**
- * 查询参数
- *
- * @author Mark sunlightcs@gmail.com
- */
 public class Query<T> {
 
     public IPage<T> getPage(Map<String, Object> params) {
