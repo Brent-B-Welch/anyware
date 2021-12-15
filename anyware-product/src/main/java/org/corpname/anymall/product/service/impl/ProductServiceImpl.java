@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: ProductServiceImpl
+ * @packageName: org.corpname.anymall.product.service.impl
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:46
+ **/
 package org.corpname.anymall.product.service.impl;
 
 import com.alibaba.fastjson.TypeReference;
@@ -36,6 +45,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductDao, ProductEntity> i
     WareFeignService wareFeignService;
 
     @Override
+    /**
+     * @methodName: queryPage
+     * @description: TODO
+     * @param: [params]
+     * @return: org.corpname.anymall.common.utils.PageUtils
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:46
+     */
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<ProductEntity> page = this.page(
                 new Query<ProductEntity>().getPage(params),
@@ -46,11 +64,29 @@ public class ProductServiceImpl extends ServiceImpl<ProductDao, ProductEntity> i
     }
 
     @Override
+    /**
+     * @methodName: saveList
+     * @description: TODO
+     * @param: [collect]
+     * @return: void
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:46
+     */
     public void saveList(List<ProductEntity> collect) {
         productDao.saveList(collect);
     }
 
     @Override
+    /**
+     * @methodName: getProductWithArticlesByProductId
+     * @description: TODO
+     * @param: [productId]
+     * @return: org.corpname.anymall.common.to.ProductWithArticlesVo
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:46
+     */
     public ProductWithArticlesVo getProductWithArticlesByProductId(Long productId) {
 
         ProductEntity productEntity = this.getById(productId);
@@ -69,6 +105,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductDao, ProductEntity> i
     }
 
     @Override
+    /**
+     * @methodName: getProductWithStock
+     * @description: TODO
+     * @param: [params]
+     * @return: org.corpname.anymall.common.utils.PageUtils
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:48
+     */
     public PageUtils getProductWithStock(Map<String, Object> params) {
         QueryWrapper<ProductEntity> queryWrapper = new QueryWrapper<ProductEntity>();
         IPage<ProductEntity> page = this.page(

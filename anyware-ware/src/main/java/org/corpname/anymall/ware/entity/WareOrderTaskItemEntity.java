@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: WareOrderTaskItemEntity
+ * @packageName: org.corpname.anymall.ware.entity
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:24
+ **/
 package org.corpname.anymall.ware.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;

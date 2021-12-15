@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: AnymallProductApplication
+ * @packageName: org.corpname.anymall.product
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:30
+ **/
 package org.corpname.anymall.product;
 
 import com.spring4all.swagger.EnableSwagger2Doc;

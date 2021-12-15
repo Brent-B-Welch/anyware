@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: OrderServiceImpl
+ * @packageName: org.corpname.anymall.product.service.impl
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:44
+ **/
 package org.corpname.anymall.product.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -44,6 +53,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
     private WareFeignService wareFeignService;
 
     @Override
+    /**
+     * @methodName: queryPage
+     * @description: default way to return WorkOrderTaskItemEntity which is not preferable
+     *               TODO: replace with vo instead of entity
+     * @param: [params]
+     * @return: org.corpname.anymall.common.utils.PageUtils
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:44
+     */
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<OrderEntity> page = this.page(
                 new Query<OrderEntity>().getPage(params),
@@ -54,6 +73,15 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
     }
 
     @Override
+    /**
+     * @methodName: createOrder
+     * @description: createOrder by given a set of vos
+     * @param: [orderVos]
+     * @return: void
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:44
+     */
     public void createOrder(List<OrderItemCreationVo> orderVos) {
         OrderEntity orderEntity = OrderEntity.builder()
                 .orderSn(UUID.randomUUID().toString())
@@ -79,6 +107,15 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
     }
 
     @Override
+    /**
+     * @methodName: getOrderInDetail
+     * @description: get an Order in detail by given id
+     * @param: [id]
+     * @return: org.corpname.anymall.product.vo.OrderInDetailVo
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:45
+     */
     public OrderInDetailVo getOrderInDetail(Long id) {
         OrderEntity orderEntity = this.getById(id);
         OrderInDetailVo orderInDetailVo = new OrderInDetailVo();
@@ -96,15 +133,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
         return orderInDetailVo;
     }
 
-    /**
-     * @MethodName: lockArticleStockByOrder
-     * @Description: the method is used to lock the stock of the articles for each product
-     * @Param: [id]
-     * @Return: org.corpname.anymall.common.to.WareOrderVo
-     * @Author: Beiji Ma
-     * @Date: 2021-12-14 22:38
-     */
     @Override
+    /**
+     * @methodName: lockArticleStockByOrder
+     * @description: the method is used to lock the stock of the articles for each product
+     * @param: [id]
+     * @return: org.corpname.anymall.common.to.WareOrderVo
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:45
+     */
     public WareOrderVo lockArticleStockByOrder(Long id) {
         Date now = new Date();
         OrderEntity orderEntity = this.getById(id);

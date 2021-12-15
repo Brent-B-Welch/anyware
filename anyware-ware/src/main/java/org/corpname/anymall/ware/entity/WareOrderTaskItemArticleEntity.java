@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: WareOrderTaskItemArticleEntity
+ * @packageName: org.corpname.anymall.ware.entity
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:23
+ **/
 package org.corpname.anymall.ware.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,8 +27,14 @@ public class WareOrderTaskItemArticleEntity {
     @TableId
     private Long id;
 
+    /**
+     * product_id
+     */
     private Long productId;
 
+    /**
+     * art_id
+     */
     private Long artId;
 
     /**

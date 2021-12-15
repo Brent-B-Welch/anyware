@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: WareOrderTaskItemArticleServiceImpl
+ * @packageName: org.corpname.anymall.ware.service.impl
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:27
+ **/
 package org.corpname.anymall.ware.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

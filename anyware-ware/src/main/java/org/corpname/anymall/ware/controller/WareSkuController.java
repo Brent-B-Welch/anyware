@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: WareSkuController
+ * @packageName: org.corpname.anymall.ware.controller
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:19
+ **/
 package org.corpname.anymall.ware.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,36 +43,47 @@ public class WareSkuController {
     @Autowired
     private ObjectMapper mapper;
 
-    /**
-     * @MethodName: list
-     * @Description: list Sku according to the page condition
-     * @Param: [params]
-     * @Return: org.corpname.anymall.common.utils.R
-     * @Author: Beiji Ma
-     * @Date: 2021-12-12 23:59
-     */
     @RequestMapping("/")
+    /**
+     * @methodName: list
+     * @description: list Sku according to the page condition
+     * @param: [params]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:35
+     */
     public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = wareSkuService.queryPage(params);
 
         return R.ok().put("page", page);
     }
 
-    /**
-     * @MethodName: print the Sku information by given ID
-     * @Description: the method's description
-     * @Param:
-     * @Return:
-     * @Author: Beiji Ma
-     * @Date: 2021-12-12 23:58
-     */
     @GetMapping("/{id}")
+    /**
+     * @methodName: info
+     * @description: print the Sku information by given ID
+     * @param: [id]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:35
+     */
     public R info(@PathVariable("id") Long id) {
         WareSkuEntity data = wareSkuService.getById(id);
 
         return R.ok().put("data", data);
     }
 
+    /**
+     * @methodsName: getProductWithStock
+     * @description: TODO
+     * @param: [vos]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 15:57
+     */
     @PostMapping(path="/stock", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public R getProductWithStock(@RequestBody List<ProductWithArticlesVo> vos) {
         log.info("ProductWithArticlesVo: {}", vos);
@@ -71,16 +91,17 @@ public class WareSkuController {
         return R.ok().put("data", productStockVos);
     }
 
-    /**
-     * @MethodName: save
-     * @Description: save Sku
-     * @Param:
-     * @Return:
-     * @Author: Beiji Ma
-     * @Date: 2021-12-13 0:01
-     */
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
+    /**
+     * @methodName: save
+     * @description: TODO
+     * @param: [wareSku]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:35
+     */
     public R save(@RequestBody WareSkuEntity wareSku) {
         wareSkuService.save(wareSku);
 
@@ -88,12 +109,13 @@ public class WareSkuController {
     }
 
     /**
-     * @MethodName: update
-     * @Description: the method's description
-     * @Param: [wareSku]
-     * @Return: org.corpname.anymall.common.utils.R
-     * @Author: Beiji Ma
-     * @Date: 2021-12-13 8:23
+     * @methodName: update
+     * @description: TODO
+     * @param: [wareSku]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:16
      */
     @PutMapping("/")
     @ResponseBody
@@ -103,12 +125,13 @@ public class WareSkuController {
     }
 
     /**
-     * @MethodName: delete
-     * @Description: the method's description
-     * @Param: [ids]
-     * @Return: org.corpname.anymall.common.utils.R
-     * @Author: Beiji Ma
-     * @Date: 2021-12-13 8:22
+     * @methodName: delete
+     * @description: TODO
+     * @param: [ids]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:17
      */
     @DeleteMapping("/{id}")
     public R delete(@PathVariable("id") Long[] ids) {
@@ -116,17 +139,18 @@ public class WareSkuController {
         return R.ok();
     }
 
-    /**
-     * @MethodName: batchAddSku
-     * @Description: the method is used to import inventory items as a batch.
-     *                  TODO: It's preferable to move the logic into service layer in the future.
-     * @Param: [file]
-     * @Return: org.corpname.anymall.common.utils.R
-     * @Author: Beiji Ma
-     * @Date: 2021-12-13 8:22
-    */
     @PostMapping(path = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
+    /**
+     * @methodName: batchAddSku
+     * @description: the method is used to import inventory items as a batch.
+     *               TODO: It's preferable to move the logic into service layer in the future.
+     * @param: [file]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:17
+     */
     public R batchAddSku(@RequestParam("file") MultipartFile file) {
         if (!file.isEmpty()) {
             BufferedReader reader = null;

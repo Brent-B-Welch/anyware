@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: WareSkuServiceImpl
+ * @packageName: org.corpname.anymall.ware.service.impl
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:28
+ **/
 package org.corpname.anymall.ware.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -23,6 +32,16 @@ import java.util.stream.Collectors;
 @Service("wareSkuService")
 public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> implements WareSkuService {
     @Override
+    /**
+     * @methodName: queryPage
+     * @description: default way to return WorkOrderTaskItemEntity which is not preferable
+     *               TODO: replace with vo instead of entity
+     * @param: [params]
+     * @return: org.corpname.anymall.common.utils.PageUtils
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 16:27
+     */
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<WareSkuEntity> page = this.page(
                 new Query<WareSkuEntity>().getPage(params),

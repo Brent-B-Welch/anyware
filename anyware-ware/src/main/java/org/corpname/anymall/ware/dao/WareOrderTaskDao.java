@@ -1,3 +1,12 @@
+/**
+ * @projectName: anyware
+ * @version: v0.0.1
+ * @className: WareOrderTaskDao
+ * @packageName: org.corpname.anymall.ware.dao
+ * @description: TODO Class description
+ * @author: Beiji Ma
+ * @date:  2021-12-15 16:22
+ **/
 package org.corpname.anymall.ware.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
