@@ -30,6 +30,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -107,6 +108,22 @@ public class ProductController {
      */
     public R getProductWithArticle(@PathVariable("productId") Long productId) {
         ProductWithArticlesVo data = productService.getProductWithArticlesByProductId(productId);
+        return R.ok().put("data", data);
+    }
+
+    @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    /**
+     * @methodName: addProductWithoutBindingResult
+     * @description: add a product with json data
+     * @param: [request]
+     * @return: org.corpname.anymall.common.utils.R
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-16 0:36
+     */
+    public R addProductWithoutBindingResult(@Valid @RequestBody ProductVo request) {
+        ProductVo data = productService.save(request);
         return R.ok().put("data", data);
     }
 

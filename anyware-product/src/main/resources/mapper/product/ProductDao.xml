@@ -6,7 +6,9 @@
     <resultMap type="org.corpname.anymall.product.entity.ProductEntity" id="wareProductMap">
         <result property="id" column="id"/>
         <result property="name" column="name"/>
-        <result property="deleted" column="deleted"/>
+        <result property="price" jdbcType="BIGINT" column="price" typeHandler="org.corpname.anymall.product.mybatis.handler.MoneyTypeHander" />
+<!--        <result property="deleted" column="deleted"/>-->
+
     </resultMap>
     <insert id="saveList" useGeneratedKeys="true" parameterType="java.util.List">
         insert into ware_product (`name`)
@@ -20,9 +22,17 @@
         name=values(name)
     </insert>
     <insert id="saveOrOverride" useGeneratedKeys="true" parameterType="org.corpname.anymall.product.entity.ProductEntity">
-        insert into ware_product (`name`)
+        insert into ware_product (
+        <if test="price">
+            `price`,
+        </if>
+            `name`
+        )
         values
         (
+        <if test="price">
+            #{price, org.corpname.anymall.product.mybatis.handler.MoneyTypeHander},
+        </if>
             #{name}
         )
         ON DUPLICATE KEY UPDATE

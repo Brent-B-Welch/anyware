@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.joda.money.Money;
 
 @Data
 @Builder
@@ -32,6 +33,11 @@ public class ProductEntity {
      * name
      */
     private String name;
+
+    /**
+     * price
+     */
+    private Money price;
 
     /**
      * status

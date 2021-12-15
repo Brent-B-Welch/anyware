@@ -8,7 +8,7 @@
         <result property="productId" column="product_id"/>
         <result property="artId" column="art_id"/>
         <result property="amountOf" column="amount_of"/>
-        <result property="deleted" column="deleted"/>
+<!--        <result property="deleted" column="deleted"/>-->
     </resultMap>
     <insert id="saveOrUpdateList" useGeneratedKeys="true" parameterType="java.util.List">
         insert into ware_product_article_relation(`product_id`,`art_id`,`amount_of`)

@@ -5,4 +5,5 @@
 mvnw.cmd
 mvnw
 .scannerwork/
+*.iml
 

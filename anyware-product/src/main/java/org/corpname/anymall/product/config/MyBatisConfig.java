@@ -35,4 +35,6 @@ public class MyBatisConfig {
         paginationInterceptor.setLimit(1000);
         return paginationInterceptor;
     }
+
+
 }

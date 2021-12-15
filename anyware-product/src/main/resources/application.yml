@@ -15,6 +15,9 @@ spring:
       - dev
 
 mybatis-plus:
+  type-handlers-package: org.corpname.anymall.product.mybatis.handler
+  configuration:
+    map-underscore-to-camel-case: true
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:
     db-config:

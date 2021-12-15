@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.corpname.anymall.common.to.ProductStockVo;
 import org.corpname.anymall.common.utils.PageUtils;
 import org.corpname.anymall.common.utils.Query;
@@ -26,6 +27,9 @@ import org.corpname.anymall.product.service.ProductArticleRelationService;
 import org.corpname.anymall.product.service.ProductService;
 import org.corpname.anymall.common.to.ProductArticleRelationVo;
 import org.corpname.anymall.common.to.ProductWithArticlesVo;
+import org.corpname.anymall.product.vo.ProductVo;
+import org.joda.money.CurrencyUnit;
+import org.joda.money.Money;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -151,6 +155,14 @@ public class ProductServiceImpl extends ServiceImpl<ProductDao, ProductEntity> i
             return null;
         }
 
+    }
+
+    @Override
+    public ProductVo save(ProductVo request) {
+        ProductEntity productEntity = ProductEntity.builder().name(request.getName()).price(request.getPrice()).build();
+        this.save(productEntity);
+        request.setId(productEntity.getId());
+        return request;
     }
 
 }

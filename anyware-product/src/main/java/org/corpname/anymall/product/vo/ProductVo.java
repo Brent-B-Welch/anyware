@@ -9,8 +9,21 @@
  **/
 package org.corpname.anymall.product.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.corpname.anymall.product.support.MoneyDeserializer;
+import org.corpname.anymall.product.support.MoneySerializer;
+import org.joda.money.Money;
 
+import javax.validation.constraints.NotNull;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class ProductVo {
     /**
@@ -20,5 +33,13 @@ public class ProductVo {
     /**
      * name
      */
+    @NotNull
     private String name;
+    /**
+     * price
+     */
+    @NotNull
+    @JsonSerialize(using = MoneySerializer.class)
+    @JsonDeserialize(using = MoneyDeserializer.class)
+    private Money price;
 }
