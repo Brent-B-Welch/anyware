@@ -19,5 +19,14 @@ import java.util.List;
 @Mapper
 public interface ProductArticleRelationDao extends BaseMapper<ProductArticleRelationEntity> {
 
+    /**
+     * @methodName: saveOrUpdateList
+     * @description: TODO
+     * @param:
+     * @return:
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 17:17
+     */
     void saveOrUpdateList(@Param("entities")List<ProductArticleRelationEntity> collect);
 }

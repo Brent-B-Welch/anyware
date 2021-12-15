@@ -18,7 +18,25 @@ import java.util.Map;
 
 public interface WareOrderTaskService extends IService<WareOrderTaskEntity> {
 
+    /**
+     * @methodName: queryPage
+     * @description: TODO
+     * @param:
+     * @return:
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 17:17
+     */
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * @methodName: lockArticleStockByOrder
+     * @description: TODO
+     * @param:
+     * @return:
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 17:17
+     */
     void lockArticleStockByOrder(WareOrderVo vo);
 }

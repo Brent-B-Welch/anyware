@@ -19,8 +19,26 @@ import java.util.List;
 import java.util.Map;
 
 public interface WareSkuService extends IService<WareSkuEntity> {
+    /**
+     * @methodName: queryPage
+     * @description: TODO
+     * @param:
+     * @return:
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 17:16
+     */
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * @methodName: getProductWithStock
+     * @description: TODO
+     * @param:
+     * @return:
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 17:16
+     */
     List<ProductStockVo> getProductWithStock(List<ProductWithArticlesVo> vos);
 
 }

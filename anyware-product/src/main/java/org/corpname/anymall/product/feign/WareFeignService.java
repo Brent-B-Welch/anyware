@@ -27,9 +27,9 @@ public interface WareFeignService {
      * @description: TODO
      * @param: [id]
      * @return: org.corpname.anymall.common.utils.R
-     * @throws: 
+     * @throws:
      * @author: Beiji Ma
-     * @date: 2021-12-15 17:07
+     * @date: 2021-12-15 17:17
      */
     R info(@PathVariable("id") Long id);
 
