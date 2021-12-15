@@ -40,6 +40,12 @@ Update the IP address in each application.yml/application-dev.yml if you deploy 
 
 ![image-20211215002256711](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215002256711.png)
 
+You need update the pom.xml to remove the setup related with nexus:
+
+
+
+![image-20211215005903693](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005903693.png)
+
 
 
 ### Startup 2 modules below:
@@ -67,4 +73,48 @@ Update the IP address in each application.yml/application-dev.yml if you deploy 
 ## Product.json
 
 ![image-20211215004201432](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004201432.png)
+
+
+
+Test:
+
+
+
+Case 1: list all Inventory information
+
+
+
+![image-20211215004540296](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004540296.png)
+
+
+
+Case 2: Update stock
+
+
+
+![image-20211215004948779](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004948779.png)
+
+
+
+Case 3: Add Article
+
+
+
+![image-20211215005055179](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005055179.png)
+
+
+
+Case 4: Query Order
+
+![image-20211215005245196](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005245196.png)
+
+
+
+Case 5: Create Order
+
+
+
+![image-20211215005353696](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005353696.png)
+
+
 
