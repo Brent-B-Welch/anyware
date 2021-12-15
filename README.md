@@ -1,3 +1,17 @@
+
+
+# Introduction 
+
+
+
+## Data Model Explained
+
+Coming soon (Drafted)
+
+## Project Structure Explained
+
+Coming soon (Not Started)
+
 # **Quick Start**
 
 
@@ -80,7 +94,7 @@ Test:
 
 
 
-Case 1: list all Inventory information
+Case 1.1: list all Inventory information
 
 
 
@@ -88,7 +102,7 @@ Case 1: list all Inventory information
 
 
 
-Case 2: Update stock
+Case 1.2: Update stock
 
 
 
@@ -96,7 +110,7 @@ Case 2: Update stock
 
 
 
-Case 3: Add Article
+Case 1.3: Add Article(Inventory Item)
 
 
 
@@ -104,13 +118,21 @@ Case 3: Add Article
 
 
 
-Case 4: Query Order
+Case 1.4: Delete Article (Inventory Item)
+
+![image-20211215010759131](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215010759131.png)
+
+
+
+
+
+Case 2.1: Query Order
 
 ![image-20211215005245196](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005245196.png)
 
 
 
-Case 5: Create Order
+Case 2.2: Create Order
 
 
 
@@ -118,3 +140,50 @@ Case 5: Create Order
 
 
 
+Case 2.3: Ware Order Task
+
+
+
+![image-20211215012510088](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215012510088.png)
+
+
+
+Case 3.1: Available stock for each product
+
+
+
+![image-20211215010520774](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215010520774.png)
+
+
+
+Case 4.1: Lock Stock for Order (Incompleted)
+
+![image-20211215012824020](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215012824020.png)
+
+
+
+Case 5.1: Query Product Article Relation
+
+![image-20211215012958919](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215012958919.png)
+
+
+
+5.2: Create Product Article Relation
+
+
+
+![image-20211215013118728](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215013118728.png)
+
+
+
+5.3: Update Product Article Relation
+
+![image-20211215013220321](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215013220321.png)
+
+
+
+5.4: Delete Product Article
+
+
+
+![image-20211215013318731](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215013318731.png)
