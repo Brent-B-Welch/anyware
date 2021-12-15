@@ -2,7 +2,7 @@
 
 # Introduction 
 
-
+*NOTE: You can refer to the pdf version for the attached photos.*
 
 ## Data Model Explained
 
@@ -52,25 +52,25 @@ git clone https://github.com/beiji-ma/anyware.git
 
 Update the IP address in each application.yml/application-dev.yml if you deploy the Nacos and the app on the different host server.
 
-![image-20211215002256711](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215002256711.png)
+![image-20211215002256711](docs/assets/image-20211215002256711.png)
 
 You need update the pom.xml to remove the setup related with nexus:
 
 
 
-![image-20211215005903693](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005903693.png)
+![image-20211215005903693](docs/assets/image-20211215005903693.png)
 
 
 
 ### Startup 2 modules below:
 
-![image-20211215003614064](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215003614064.png)
+![image-20211215003614064](docs/assets/image-20211215003614064.png)
 
 
 
 ***Congratulations*** if you could see the 2 service below from the console of Nacos:
 
-![image-20211215003845653](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215003845653.png)
+![image-20211215003845653](docs/assets/image-20211215003845653.png)
 
 
 
@@ -80,13 +80,13 @@ You need update the pom.xml to remove the setup related with nexus:
 
 ## Inventory.json
 
-![image-20211215004103907](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004103907.png)
+![image-20211215004103907](docs/assets/image-20211215004103907.png)
 
 
 
 ## Product.json
 
-![image-20211215004201432](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004201432.png)
+![image-20211215004201432](docs/assets/image-20211215004201432.png)
 
 
 
@@ -98,7 +98,7 @@ Case 1.1: list all Inventory information
 
 
 
-![image-20211215004540296](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004540296.png)
+![image-20211215004540296](docs/assets/image-20211215004540296.png)
 
 
 
@@ -106,7 +106,7 @@ Case 1.2: Update stock
 
 
 
-![image-20211215004948779](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215004948779.png)
+![image-20211215004948779](docs/assets/image-20211215004948779.png)
 
 
 
@@ -114,13 +114,13 @@ Case 1.3: Add Article(Inventory Item)
 
 
 
-![image-20211215005055179](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005055179.png)
+![image-20211215005055179](docs/assets/image-20211215005055179.png)
 
 
 
 Case 1.4: Delete Article (Inventory Item)
 
-![image-20211215010759131](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215010759131.png)
+![image-20211215010759131](docs/assets/image-20211215010759131.png)
 
 
 
@@ -128,7 +128,7 @@ Case 1.4: Delete Article (Inventory Item)
 
 Case 2.1: Query Order
 
-![image-20211215005245196](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005245196.png)
+![image-20211215005245196](docs/assets/image-20211215005245196.png)
 
 
 
@@ -136,7 +136,7 @@ Case 2.2: Create Order
 
 
 
-![image-20211215005353696](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215005353696.png)
+![image-20211215005353696](docs/assets/image-20211215005353696.png)
 
 
 
@@ -144,7 +144,7 @@ Case 2.3: Ware Order Task
 
 
 
-![image-20211215012510088](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215012510088.png)
+![image-20211215012510088](docs/assets/image-20211215012510088.png)
 
 
 
@@ -152,19 +152,19 @@ Case 3.1: Available stock for each product
 
 
 
-![image-20211215010520774](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215010520774.png)
+![image-20211215010520774](docs/assets/image-20211215010520774.png)
 
 
 
 Case 4.1: Lock Stock for Order (Incompleted)
 
-![image-20211215012824020](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215012824020.png)
+![image-20211215012824020](docs/assets/image-20211215012824020.png)
 
 
 
 Case 5.1: Query Product Article Relation
 
-![image-20211215012958919](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215012958919.png)
+![image-20211215012958919](docs/assets/image-20211215012958919.png)
 
 
 
@@ -172,13 +172,13 @@ Case 5.1: Query Product Article Relation
 
 
 
-![image-20211215013118728](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215013118728.png)
+![image-20211215013118728](docs/assets/image-20211215013118728.png)
 
 
 
 5.3: Update Product Article Relation
 
-![image-20211215013220321](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215013220321.png)
+![image-20211215013220321](docs/assets/image-20211215013220321.png)
 
 
 
@@ -186,4 +186,4 @@ Case 5.1: Query Product Article Relation
 
 
 
-![image-20211215013318731](C:\Users\creator\AppData\Roaming\Typora\typora-user-images\image-20211215013318731.png)
+![image-20211215013318731](docs/assets/image-20211215013318731.png)
