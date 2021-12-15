@@ -18,6 +18,16 @@ import java.util.List;
 
 @Mapper
 public interface ProductDao extends BaseMapper<ProductEntity> {
+
+    /**
+     * @methodName: saveList
+     * @description: TODO
+     * @param:
+     * @return:
+     * @throws:
+     * @author: Beiji Ma
+     * @date: 2021-12-15 17:06
+     */
     void saveList(@Param("entities")List<ProductEntity> entities);
 
 }
