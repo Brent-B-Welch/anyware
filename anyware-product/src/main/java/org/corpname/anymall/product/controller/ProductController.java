@@ -34,6 +34,7 @@ import javax.validation.Valid;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -161,13 +162,15 @@ public class ProductController {
 
                     log.info("Product:{}, ID: {}", productEntity.getName(), productEntity.getId());
 
-                    QueryWrapper<ProductArticleRelationEntity> productArticleRelationEntityQueryWrapper =new QueryWrapper<ProductArticleRelationEntity>().eq("product_id", productEntity.getId());
+                    QueryWrapper<ProductArticleRelationEntity> productArticleRelationEntityQueryWrapper = new QueryWrapper<ProductArticleRelationEntity>().eq("product_id", productEntity.getId());
                     List<ProductArticleRelationEntity> relationEntities = productArticleRelationService.list(productArticleRelationEntityQueryWrapper);
                     log.info("Persisted Product before: {}", relationEntities);
-                    List<ProductArticleRelationEntity> collect = product.getItems()
-                            .stream()
+                    List<ProductArticleRelationEntity> collect = Optional.ofNullable(product.getItems())
+                            .orElse(Collections.emptyList()).stream()
+                            .filter(item -> item.getArtId() != null && item.getAmount() != null)
                             .map(item -> {
                                         relationEntities.removeIf(relation -> relation.getProductId().equals(productEntity.getId()) && relation.getArtId().equals(item.getArtId()));
+
                                         return ProductArticleRelationEntity.builder()
                                                 .artId(item.getArtId())
                                                 .productId(productEntity.getId())
@@ -183,8 +186,9 @@ public class ProductController {
                     }
 
                     log.info("To be Persisted Product: {}", collect);
-                    productArticleRelationService.batchSaveOrUpdate(collect);
-
+                    if (!collect.isEmpty()) {
+                        productArticleRelationService.batchSaveOrUpdate(collect);
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
