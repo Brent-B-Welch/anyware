@@ -35,7 +35,7 @@
 
 
 
-### */<module_name>/<model_name>/{id}/<options>*
+### */<module_name>/<model_name>/{id}/<cmd_options>*
 
 - E.g., /product/product/1/withart: 
 - Inspect the information for Product which product_id is 1, including the composed of Articles.
