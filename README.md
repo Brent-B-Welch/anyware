@@ -12,9 +12,13 @@
 
 ## Naming Convention - API
 
+```
+"api/" could used as the prefix next step.
+```
 
 
-### */<module_name>/<model-name>/*
+
+### */<module_name>/<modelname>/*
 
 - E.g., /product/product/: 
 - 1st product is the module’s name, 
